@@ -2,8 +2,6 @@
 
 ### Personal webpage to publish my personal projects
 
-[Click here go to my website](https://didacc.github.io/index.html)
- 
-  or
+Link: https://didacc.github.io/
 
-Type this on your navigator: https://didacc.github.io/
+Thx for sharing :blush:
