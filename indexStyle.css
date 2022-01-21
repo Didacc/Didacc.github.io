@@ -11,3 +11,8 @@ h1{
   font-size: 60px;
   text-align: center;
 }
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
