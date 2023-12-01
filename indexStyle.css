@@ -1,9 +1,3 @@
-@keyframes shake{
-  0% {left:0;}
-  50% {left:20%;}
-  100% {left:0;}
-}
-
 body {
   margin-top: 100px;
   margin-bottom: 100px;
@@ -37,4 +31,10 @@ footer{
 .movingItem{
   animation-name: shake;
   animation-duration: 4s;
+}
+
+@keyframes shake{
+  0% {left:0;}
+  50% {left:20%;}
+  100% {left:0;}
 }
