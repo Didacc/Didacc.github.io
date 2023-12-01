@@ -5,17 +5,21 @@ body {
   margin-left: 80px;
   background-color: black;
   color: white;
-  font-size: 20px;
+  font-size: 110%;
 }
 
 h1{
-  font-size: 60px;
+  font-size: 400px;
   text-align: center;
+  text-shadow: 2px 2px gray;
 }
 
 /* mouse over link */
 a:hover {
-  color: hotpink;
+  color: gainsboro;
+}
+a{
+  color: cornsilk;
 }
 
 footer{
