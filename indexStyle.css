@@ -5,7 +5,7 @@ body {
   margin-left: 80px;
   background-color: black;
   color: white;
-  font-size: 10px;
+  font-size: 20px;
 }
 
 h1{
@@ -13,9 +13,6 @@ h1{
   text-align: center;
 }
 
-a{
-  font-size:10px;
-}
 /* mouse over link */
 a:hover {
   color: hotpink;
