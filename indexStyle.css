@@ -29,6 +29,7 @@ footer{
 }
 
 .movingItem{
+  position: relative;
   animation-name: shake;
   animation-duration: 4s;
 }
