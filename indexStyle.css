@@ -17,3 +17,13 @@ h1{
 a:hover {
   color: hotpink;
 }
+
+footer{
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  color: gray;
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+}
