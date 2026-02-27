@@ -1,46 +1,103 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  margin-top: 100px;
-  margin-bottom: 100px;
-  margin-right: 150px;
-  margin-left: 80px;
-  background-color: black;
-  color: white;
-  font-size: 110%;
+  background-color: #0d0d0d;
+  color: #e8e8e8;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-h1{
-  font-size: 400%;
+.container {
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 80px 24px 120px;
+  flex: 1;
+}
+
+header {
+  margin-bottom: 56px;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
   text-align: center;
-  text-shadow: 2px 2px gray;
+  text-shadow: 2px 2px 12px rgba(128, 128, 128, 0.3);
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
 }
 
-/* mouse over link */
-a:hover {
-  color: gainsboro;
-}
-a{
-  color: cornsilk;
+h3 {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #888;
 }
 
-footer{
-  left: 5%;
-  bottom: 2%;
+.section-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #555;
+  margin-bottom: 14px;
+}
+
+.experience ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.experience ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  border: 1px solid #222;
+  border-radius: 8px;
+  background: #141414;
+  color: #e8e8e8;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.experience ul li a::after {
+  content: '→';
+  opacity: 0.3;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.experience ul li a:hover {
+  border-color: #444;
+  background: #1c1c1c;
+  color: #fff;
+}
+
+.experience ul li a:hover::after {
+  opacity: 1;
+  transform: translateX(5px);
+}
+
+footer {
   position: fixed;
-  color: gray;
-  width: 90%;
+  bottom: 0;
+  left: 0;
+  right: 0;
   text-align: center;
-  font-size: 15px;
-}
-
-.movingItem{
-  position: relative;
-  animation-name: shake;
-  animation-duration: 4s;
-  animation-delay: 10s;
-}
-
-@keyframes shake{
-  0% {left:0;}
-  50% {left:20%;}
-  100% {left:0;}
+  padding: 20px 16px;
+  font-size: 13px;
+  color: #444;
+  background: linear-gradient(to top, #0d0d0d 70%, transparent);
 }
