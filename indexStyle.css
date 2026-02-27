@@ -15,6 +15,8 @@ body {
   flex-direction: column;
 }
 
+/* ── Shared layout ── */
+
 .container {
   max-width: 720px;
   width: 100%;
@@ -22,6 +24,8 @@ body {
   padding: 80px 24px 120px;
   flex: 1;
 }
+
+/* ── Index page ── */
 
 header {
   margin-bottom: 56px;
@@ -90,6 +94,87 @@ h3 {
   transform: translateX(5px);
 }
 
+/* ── Inner pages ── */
+
+.page-nav {
+  margin-bottom: 40px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #555;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.back-link::before {
+  content: '←';
+}
+
+.back-link:hover {
+  color: #e8e8e8;
+}
+
+.page-title {
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700;
+  margin-bottom: 32px;
+  line-height: 1.25;
+  letter-spacing: -0.3px;
+}
+
+.content p {
+  color: #aaa;
+  margin-bottom: 20px;
+  max-width: 65ch;
+}
+
+.logo-link {
+  display: inline-block;
+  margin: 8px 0 24px;
+}
+
+.logo-link img {
+  width: 260px;
+  max-width: 100%;
+  border-radius: 8px;
+  opacity: 0.85;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.logo-link:hover img {
+  opacity: 1;
+  transform: scale(1.02);
+}
+
+.entry-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.entry-list li {
+  padding: 14px 20px;
+  border: 1px solid #1e1e1e;
+  border-radius: 6px;
+  background: #111;
+  color: #ccc;
+  font-size: 0.95rem;
+  font-family: 'Courier New', monospace;
+}
+
+.entry-list li::before {
+  content: '$ ';
+  color: #4ade80;
+}
+
+/* ── Shared footer ── */
+
 footer {
   position: fixed;
   bottom: 0;
@@ -100,4 +185,105 @@ footer {
   font-size: 13px;
   color: #444;
   background: linear-gradient(to top, #0d0d0d 70%, transparent);
+}
+
+footer a {
+  color: #555;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+footer a:hover {
+  color: #e8e8e8;
+}
+
+/* ── Easter egg terminal overlay ── */
+
+#terminal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+}
+
+#terminal-overlay.active {
+  display: flex;
+}
+
+.terminal-box {
+  background: #0a0a0a;
+  border: 1px solid #222;
+  border-radius: 10px;
+  width: min(600px, 92vw);
+  font-family: 'Courier New', monospace;
+  overflow: hidden;
+  box-shadow: 0 0 80px rgba(74, 222, 128, 0.06), 0 0 0 1px #111;
+  cursor: default;
+}
+
+.terminal-bar {
+  background: #161616;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.terminal-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.terminal-dot:nth-child(1) { background: #ff5f57; }
+.terminal-dot:nth-child(2) { background: #febc2e; }
+.terminal-dot:nth-child(3) { background: #28c840; }
+
+.terminal-title {
+  margin-left: auto;
+  font-size: 12px;
+  color: #333;
+}
+
+.terminal-body {
+  padding: 24px;
+  font-size: 13px;
+  line-height: 1.9;
+  color: #4ade80;
+  min-height: 220px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.terminal-body .dim   { color: #444; }
+.terminal-body .white { color: #e8e8e8; }
+.terminal-body .red   { color: #ef4444; }
+.terminal-body .green { color: #4ade80; }
+
+.terminal-hint {
+  font-size: 11px;
+  color: #2a2a2a;
+  text-align: right;
+  padding: 0 24px 16px;
+  font-family: 'Courier New', monospace;
+}
+
+.cursor {
+  display: inline-block;
+  width: 8px;
+  height: 13px;
+  background: #4ade80;
+  vertical-align: middle;
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
 }

@@ -29,5 +29,21 @@
         <footer>
             <p>Dídac [[Cybersecurity consultant, growing, learning...]]</p>
         </footer>
+
+        <!-- Easter egg terminal overlay -->
+        <div id="terminal-overlay">
+            <div class="terminal-box" onclick="event.stopPropagation()">
+                <div class="terminal-bar">
+                    <span class="terminal-dot"></span>
+                    <span class="terminal-dot"></span>
+                    <span class="terminal-dot"></span>
+                    <span class="terminal-title">bash — 80×24</span>
+                </div>
+                <div class="terminal-body" id="terminal-body"></div>
+                <div class="terminal-hint">ESC to close</div>
+            </div>
+        </div>
+
+        <script src="easter.js"></script>
     </body>
 </html>
