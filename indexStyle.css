@@ -126,6 +126,24 @@ h3 {
   letter-spacing: -0.3px;
 }
 
+.job-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-bottom: 32px;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.job-meta span::before {
+  content: '·  ';
+  color: #333;
+}
+
+.job-meta span:first-child::before {
+  content: '';
+}
+
 .content p {
   color: #aaa;
   margin-bottom: 20px;
