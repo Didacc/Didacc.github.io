@@ -55,6 +55,20 @@ body {
   box-shadow: inset 3px 0 0 #4ade80;
 }
 
+.category-card__icon {
+  font-size: 1.4rem;
+  grid-column: 1;
+  grid-row: 1;
+  margin-bottom: 10px;
+  line-height: 1;
+  filter: grayscale(30%);
+  transition: filter 0.2s ease;
+}
+
+.category-card:hover .category-card__icon {
+  filter: grayscale(0%);
+}
+
 .category-card__label {
   font-size: 0.7rem;
   font-weight: 600;
@@ -62,7 +76,7 @@ body {
   text-transform: uppercase;
   color: #444;
   grid-column: 1;
-  grid-row: 1;
+  grid-row: 2;
   margin-bottom: 6px;
 }
 
@@ -71,20 +85,20 @@ body {
   font-weight: 600;
   color: #e8e8e8;
   grid-column: 1;
-  grid-row: 2;
+  grid-row: 3;
 }
 
 .category-card__desc {
   font-size: 0.85rem;
   color: #555;
   grid-column: 1;
-  grid-row: 3;
+  grid-row: 4;
   margin-top: 6px;
 }
 
 .category-card__arrow {
   grid-column: 2;
-  grid-row: 1 / 4;
+  grid-row: 1 / 5;
   align-self: center;
   color: #333;
   font-size: 1.1rem;
