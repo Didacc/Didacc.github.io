@@ -6,6 +6,8 @@
 
 body {
   background-color: #0d0d0d;
+  background-image: radial-gradient(circle, #1c1c1c 1px, transparent 1px);
+  background-size: 28px 28px;
   color: #e8e8e8;
   font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
   font-size: 16px;
@@ -25,17 +27,113 @@ body {
   flex: 1;
 }
 
+/* ── Index page – category cards ── */
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.category-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  align-items: start;
+  padding: 20px 24px;
+  border: 1px solid #222;
+  border-radius: 10px;
+  background: #141414;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.category-card:hover {
+  border-color: #333;
+  background: #1a1a1a;
+  box-shadow: inset 3px 0 0 #4ade80;
+}
+
+.category-card__label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #444;
+  grid-column: 1;
+  grid-row: 1;
+  margin-bottom: 6px;
+}
+
+.category-card__title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #e8e8e8;
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.category-card__desc {
+  font-size: 0.85rem;
+  color: #555;
+  grid-column: 1;
+  grid-row: 3;
+  margin-top: 6px;
+}
+
+.category-card__arrow {
+  grid-column: 2;
+  grid-row: 1 / 4;
+  align-self: center;
+  color: #333;
+  font-size: 1.1rem;
+  padding-left: 16px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.category-card:hover .category-card__arrow {
+  color: #4ade80;
+  transform: translateX(4px);
+}
+
+/* ── Empty state ── */
+
+.empty-state {
+  color: #444;
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-top: 8px;
+}
+
 /* ── Index page ── */
 
 header {
   margin-bottom: 56px;
+  position: relative;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 560px;
+  height: 280px;
+  background: radial-gradient(ellipse at center, rgba(74, 222, 128, 0.07) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 h1 {
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
   text-align: center;
-  text-shadow: 2px 2px 12px rgba(128, 128, 128, 0.3);
+  background: linear-gradient(135deg, #ffffff 40%, #86efac 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 16px;
   letter-spacing: -0.5px;
 }
@@ -200,9 +298,11 @@ footer {
   right: 0;
   text-align: center;
   padding: 20px 16px;
-  font-size: 13px;
-  color: #444;
+  font-size: 12px;
+  font-family: 'Courier New', monospace;
+  color: #333;
   background: linear-gradient(to top, #0d0d0d 70%, transparent);
+  letter-spacing: 0.3px;
 }
 
 footer a {
