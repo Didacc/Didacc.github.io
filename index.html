@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -12,46 +11,177 @@
         <link rel="stylesheet" href="indexStyle.css">
     </head>
     <body>
-        <main class="container">
-            <header>
-                <h1>Personal Blog: Dídac Cabiscol</h1>
-                <h3>To publish some interesting things about me and fun projects made along the way!</h3>
-            </header>
 
-            <nav class="categories">
-                <a class="category-card" href="experience.html">
-                    <div class="category-card__icon">💼</div>
-                    <div class="category-card__label">Work</div>
-                    <div class="category-card__title">Job Experience</div>
-                    <div class="category-card__desc">Internships and professional roles in tech and cybersecurity.</div>
-                    <span class="category-card__arrow">→</span>
-                </a>
-                <a class="category-card" href="books.html">
-                    <div class="category-card__icon">📖</div>
-                    <div class="category-card__label">Reading</div>
-                    <div class="category-card__title">Book Reviews</div>
-                    <div class="category-card__desc">Notes and thoughts on books worth reading.</div>
-                    <span class="category-card__arrow">→</span>
-                </a>
-                <a class="category-card" href="articles.html">
-                    <div class="category-card__icon">✍️</div>
-                    <div class="category-card__label">Writing</div>
-                    <div class="category-card__title">Personal Articles</div>
-                    <div class="category-card__desc">Ideas, projects and things I find interesting enough to write about.</div>
-                    <span class="category-card__arrow">→</span>
-                </a>
-            </nav>
-        </main>
+        <!-- ── HUD top bar ── -->
+        <div class="hud-bar">
+            <span class="hud-item hud-secure"><span class="hud-dot"></span>SECURE</span>
+            <span class="hud-item hud-uid">uid=1337(didac)</span>
+            <span class="hud-item hud-clock" id="hud-clock">0000-00-00 00:00:00</span>
+        </div>
 
+        <!-- ── Single-page app views ── -->
+        <div id="app">
+
+            <!-- HOME -->
+            <div class="view" id="view-home">
+                <div class="container">
+                    <header>
+                        <div class="header-corner tl"></div>
+                        <div class="header-corner tr"></div>
+                        <h1>Dídac Cabiscol</h1>
+                        <p class="hero-role">[ Cybersecurity Analyst // Software Engineer ]</p>
+                        <p class="hero-sub">// Barcelona · Deloitte · Always learning</p>
+                    </header>
+
+                    <nav class="categories">
+                        <button class="category-card" data-view="view-experience">
+                            <span class="card-tag">01</span>
+                            <div class="category-card__icon">💼</div>
+                            <div class="category-card__label">WORK</div>
+                            <div class="category-card__title">Job Experience</div>
+                            <div class="category-card__desc">Internships and professional roles in tech and cybersecurity.</div>
+                            <span class="category-card__arrow">→</span>
+                        </button>
+                        <button class="category-card" data-view="view-books">
+                            <span class="card-tag">02</span>
+                            <div class="category-card__icon">📖</div>
+                            <div class="category-card__label">READ</div>
+                            <div class="category-card__title">Book Reviews</div>
+                            <div class="category-card__desc">Notes and thoughts on books worth reading.</div>
+                            <span class="category-card__arrow">→</span>
+                        </button>
+                        <button class="category-card" data-view="view-articles">
+                            <span class="card-tag">03</span>
+                            <div class="category-card__icon">✍️</div>
+                            <div class="category-card__label">WRITE</div>
+                            <div class="category-card__title">Personal Articles</div>
+                            <div class="category-card__desc">Ideas, projects and things I find interesting enough to write about.</div>
+                            <span class="category-card__arrow">→</span>
+                        </button>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- EXPERIENCE LIST -->
+            <div class="view" id="view-experience">
+                <div class="container">
+                    <nav class="page-nav">
+                        <button class="back-link" data-view="view-home">Home</button>
+                    </nav>
+                    <h1 class="page-title">Job Experience</h1>
+                    <section class="experience">
+                        <p class="section-label">// Roles</p>
+                        <ul>
+                            <li>
+                                <button class="exp-link" data-view="view-deloitte">
+                                    <div class="exp-link__inner">
+                                        <span class="exp-link__period">Dec 2023 – Present · Full-time</span>
+                                        <span class="exp-link__title">Cyber Security Analyst · Deloitte Spain</span>
+                                    </div>
+                                    <span class="exp-link__arrow">→</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button class="exp-link" data-view="view-csuc">
+                                    <div class="exp-link__inner">
+                                        <span class="exp-link__period">6 months · Internship</span>
+                                        <span class="exp-link__title">Software Engineer Intern · CSUC</span>
+                                    </div>
+                                    <span class="exp-link__arrow">→</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+
+            <!-- DELOITTE -->
+            <div class="view" id="view-deloitte">
+                <div class="container">
+                    <nav class="page-nav">
+                        <button class="back-link" data-view="view-experience">Experience</button>
+                    </nav>
+                    <h1 class="page-title">Cyber Security Analyst at Deloitte Spain</h1>
+                    <div class="job-meta">
+                        <span>Deloitte · Full-time</span>
+                        <span>Dec 2023 – Present · 2 yrs 3 mos</span>
+                        <span>Barcelona, Catalonia, Spain · Hybrid</span>
+                    </div>
+                    <article class="content">
+                        <p>Cybersecurity has always been one of my favourite fields. Already during the career, we used to do one subject called Computer Security where we saw the basics of Cybersecurity.</p>
+                        <p>A nice teacher joined with a personal motivation made Cybersecurity my preference when trying to find a job. That's why, after I finished my internship, I applied for some Cybersecurity related job offers. Spoiler done in the title, I ended up in Deloitte Spain, working as a Cybersecurity Consultant.</p>
+                        <ul class="entry-list">
+                            <li>Currently managing Imperva and AWS Web Application Firewall (WAF) solutions to deliver large-scale web protection for a major financial institution. Responsibilities include detailed periodic reporting and Layer 7 attack analysis to enhance WAF rule sets and improve overall application protection.</li>
+                            <li>Conducted a comprehensive cybersecurity analysis for a scale-up company, identifying vulnerabilities in its security infrastructure and providing solutions and recommendations to mitigate risks and strengthen overall security. The final recommendation focused on implementing a full SASE solution to deliver a more unified and scalable security architecture.</li>
+                            <li>Managed and maintained the Identity and Access Management (IAM) infrastructure for a large insurance company, ensuring secure authentication, authorization, and compliance with industry regulations while enforcing IAM security principles such as least privilege and role-based access control (RBAC).</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+
+            <!-- CSUC -->
+            <div class="view" id="view-csuc">
+                <div class="container">
+                    <nav class="page-nav">
+                        <button class="back-link" data-view="view-experience">Experience</button>
+                    </nav>
+                    <h1 class="page-title">Internship as a Software Engineer at CSUC</h1>
+                    <article class="content">
+                        <p>One can think that an internship can be useless or only something for the CV, but here I'll explain what I did so you take that idea out of your mind.</p>
+                        <p>First of all let me present the company where I did my internship for 6 months, it's called CSUC and the logo looks like this:</p>
+                        <a class="logo-link" href="https://www.csuc.cat/" target="_blank" rel="noopener noreferrer">
+                            <img src="csuc_logo.png" alt="CSUC logo">
+                        </a>
+                        <p>Nice, isn't it? Well it's nice actually, it's a company that works mainly for the Catalan Government (Generalitat de Catalunya), and therefore, they maintain and do all type of IT work that you can imagine.</p>
+                        <p>Time to explain what I did there, not big projects as you can imagine but still some interesting stuff:</p>
+                        <ul class="entry-list">
+                            <li>Bash scripting to automatize daily tasks</li>
+                            <li>Front and backend development</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+
+            <!-- BOOKS -->
+            <div class="view" id="view-books">
+                <div class="container">
+                    <nav class="page-nav">
+                        <button class="back-link" data-view="view-home">Home</button>
+                    </nav>
+                    <h1 class="page-title">Book Reviews</h1>
+                    <div class="empty-state">
+                        <span class="empty-state__prompt">$</span> ls -la ./reviews<br>
+                        <span class="empty-state__output">total 0 — no entries found.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ARTICLES -->
+            <div class="view" id="view-articles">
+                <div class="container">
+                    <nav class="page-nav">
+                        <button class="back-link" data-view="view-home">Home</button>
+                    </nav>
+                    <h1 class="page-title">Personal Articles</h1>
+                    <div class="empty-state">
+                        <span class="empty-state__prompt">$</span> ls -la ./articles<br>
+                        <span class="empty-state__output">total 0 — no entries found.</span>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /#app -->
+
+        <!-- ── Footer ── -->
         <footer>
             <div class="footer-inner">
-                <p>Dídac [[Cybersecurity consultant, growing, learning...]]</p>
-                <a href="mailto:didac@didroot.com">didac@didroot.com</a>
+                <span class="footer-status" id="footer-status">[+] no CVEs found today</span>
+                <a href="mailto:didac@didroot.com" id="email-link">didac@didroot.com</a>
                 <a href="https://www.linkedin.com/in/didaccabi" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
             </div>
         </footer>
 
-        <!-- Easter egg terminal overlay -->
+        <!-- ── Easter egg terminal overlay ── -->
         <div id="terminal-overlay">
             <div class="terminal-box" onclick="event.stopPropagation()">
                 <div class="terminal-bar">
@@ -65,6 +195,10 @@
             </div>
         </div>
 
+        <!-- ── Scanlines overlay ── -->
+        <div class="scanlines" aria-hidden="true"></div>
+
         <script src="easter.js"></script>
+        <script src="app.js"></script>
     </body>
 </html>
